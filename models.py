@@ -7,7 +7,7 @@ db = Database()
 class Token(db.Entity):
     id = PrimaryKey(str, auto=False)
     symbol = Required(str)
-    name = Required(str)
+    name = Optional(str, nullable=True)
 
     pairs0 = Set("Pair", reverse="token0")
     pairs1 = Set("Pair", reverse="token1")
